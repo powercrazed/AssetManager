@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container">
   <h1>Licences</h1>
   <table class="table table-striped">
     <thead>
@@ -7,6 +7,7 @@
         <th>Application</th>
         <th>Version</th>
         <th>Edition</th>
+        <th colspan="3" class="fit"></th>
       </tr>
     </thead>
 
@@ -17,8 +18,13 @@
           <td><%= licence.app_name %></td>
           <td><%= licence.version %></td>
           <td><%= licence.edition %></td>
+          <td class="fit"><%= link_to 'Show', licence, class: "btn btn-primary" %></td>
+          <td class="fit"><%= link_to 'Edit', edit_licence_path(licence), class: "btn btn-primary" %></td>
+          <td class="fit"><%= link_to 'Delete', licence, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
         </tr>
       <% end %>
     </tbody>
   <table>
+  <br>
+  <%= link_to 'New Licence', new_licence_path, class: "btn btn-primary" %>
 </div>

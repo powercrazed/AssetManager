@@ -1,0 +1,72 @@
+<% if @licence.errors.any? %>
+  <div id="error_explanation" class="alert alert-danger alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong><%= pluralize(@licence.errors.count, "error") %> prohibited this licence from being saved:</strong>
+
+    <ul>
+    <% @licence.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<!-- horizontal form -->
+<%= form_for @licence, :html => {:class => "form-horizontal"} do |f| %>
+
+  <div class="form-group">
+    <%= f.label :vendor, class: "col-xs-12 col-sm-2 control-label" %>
+    <div class="col-xs-10 col-sm-4">
+      <%= f.text_field :vendor, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :app_name, class: "col-xs-12 col-sm-2 control-label" %>
+    <div class="col-xs-10 col-sm-4">
+      <%= f.text_field :app_name, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :version, class: "col-xs-12 col-sm-2 control-label" %>
+    <div class="col-xs-10 col-sm-4">
+      <%= f.text_field :version, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :edition, class: "col-xs-12 col-sm-2 control-label" %>
+    <div class="col-xs-10 col-sm-4">
+      <%= f.text_field :edition, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :channel, class: "col-xs-12 col-sm-2 control-label" %>
+    <div class="col-xs-10 col-sm-4">
+      <%= f.text_field :channel, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :purchased_from, class: "col-xs-12 col-sm-2 control-label" %>
+    <div class="col-xs-10 col-sm-4">
+      <%= f.text_field :purchased_from, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :purchased_date, class: "col-xs-12 col-sm-2 control-label" %>
+    <div class="col-xs-10 col-sm-4">
+      <%= f.text_field :purchased_date, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="actions form-group">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-2">
+      <%= f.submit "Submit", class: "btn btn-success" %>
+      <%= link_to "Back", :back, class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
