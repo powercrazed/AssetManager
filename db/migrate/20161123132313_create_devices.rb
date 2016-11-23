@@ -3,7 +3,7 @@ class CreateDevices < ActiveRecord::Migration
     create_table :devices do |t|
       t.string :name
       t.integer :tag
-      t.string :type
+      t.string :dev_type
       t.string :make
       t.string :model
       t.string :serial

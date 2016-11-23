@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20161123133134) do
   create_table "devices", force: :cascade do |t|
     t.string   "name"
     t.integer  "tag"
-    t.string   "type"
+    t.string   "dev_type"
     t.string   "make"
     t.string   "model"
     t.string   "serial"
