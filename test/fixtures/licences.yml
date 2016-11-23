@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vendor: MyString
+  app_name: MyString
+  version: MyString
+  edition: MyString
+  channel: MyString
+  purchased_from: MyString
+  purchased_date: 2016-11-23
+
+two:
+  vendor: MyString
+  app_name: MyString
+  version: MyString
+  edition: MyString
+  channel: MyString
+  purchased_from: MyString
+  purchased_date: 2016-11-23
