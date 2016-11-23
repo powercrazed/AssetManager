@@ -1,2 +1,24 @@
-<h1>Licences#index</h1>
-<p>Find me in app/views/licences/index.html.erb</p>
+<div class="container-fluid">
+  <h1>Licences</h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Vendor</th>
+        <th>Application</th>
+        <th>Version</th>
+        <th>Edition</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @licences.each do |licence| %>
+        <tr>
+          <td><%= licence.vendor %></td>
+          <td><%= licence.app_name %></td>
+          <td><%= licence.version %></td>
+          <td><%= licence.edition %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  <table>
+</div>
