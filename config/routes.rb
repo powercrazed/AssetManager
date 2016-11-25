@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: 'devices#index'
+
   resources :users
   resources :devices
   resources :licences
