@@ -24,6 +24,10 @@
     <dd><%= @licence.purchased_from %></dd>
     <dt>Purchased on</dt>
     <dd><%= @licence.purchased_on %></dd>
+    <dt>Device:</dt>
+    <dd><%= @licence.device.try(:name) %></dd>
+    <dt>User:</dt>
+    <dd><%= @licence.user.try(:full_name) %></dd>
   </dl>
   <hr />
 
