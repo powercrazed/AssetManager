@@ -7,7 +7,7 @@ class CreateLicences < ActiveRecord::Migration
       t.string :edition
       t.string :channel
       t.string :purchased_from
-      t.date :purchased_date
+      t.date :purchased_on
 
       t.timestamps null: false
     end

@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20161123133134) do
     t.string   "edition"
     t.string   "channel"
     t.string   "purchased_from"
-    t.date     "purchased_date"
+    t.date     "purchased_on"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
