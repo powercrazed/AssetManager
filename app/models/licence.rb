@@ -3,4 +3,8 @@ class Licence < ActiveRecord::Base
 
   belongs_to :device, :inverse_of => :licences
   belongs_to :user, :inverse_of => :licences
+
+  def app_full
+    "#{app_name} #{version} #{edition}"
+  end
 end
