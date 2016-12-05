@@ -18,12 +18,12 @@
     <div id="navbar" class="navbar-collapse collapse">
 
       <ul class="nav navbar-nav">
-        <li class="<%= is_active(devices_path) %>">
-          <%= link_to 'Devices', devices_path %>
-        </li>
-
         <li class="<%= is_active(licences_path) %>">
           <%= link_to 'Licences', licences_path %>
+        </li>
+
+        <li class="<%= is_active(devices_path) %>">
+          <%= link_to 'Devices', devices_path %>
         </li>
 
         <li class="<%= is_active(users_path) %>">

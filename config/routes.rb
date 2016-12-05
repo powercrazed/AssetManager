@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'devices#index'
+  root to: redirect(path: 'licences', status: 302)
 
   resources :users
   resources :devices
