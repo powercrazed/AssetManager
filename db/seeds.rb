@@ -14,9 +14,9 @@ u[3] = User.create(first_name: "Laura", last_name: "Foster", location: "Office 1
 u[4] = User.create(first_name: "Isaac", last_name: "Sanders", location: "Home")
 
 d = []
-d[0] = Device.create(name: "desk-0001", tag: 1, dev_type: "Desktop", make: "Dell", model: "Vostro 470 mt", serial: "12345", purchased_on: "2015-11-10", warranty_length: 3, warranty_type: "NBD")
-d[1] = Device.create(name: "desk-0035", tag: 35, dev_type: "Dev Desktop", make: "Dell", model: "Optiplex 9020", serial: "12346", purchased_on: "2015-09-15", warranty_length: 3, warranty_type: "NBD")
-d[2] = Device.create(name: "lap-0111", tag: 111, dev_type: "Laptop", make: "Dell", model: "XPS 13", serial: "12347", purchased_on: "2013-05-05", warranty_length: 3, warranty_type: "NBD")
+d[0] = Device.create(name: "desk-0001", tag: 1, dev_type: "Desktop", make: "Dell", model: "Vostro 470 mt", serial: "12345", purchased_on: "2015-11-10", warranty_length: 3, warranty_type: "NBD", user_id: u[0].id)
+d[1] = Device.create(name: "desk-0035", tag: 35, dev_type: "Dev Desktop", make: "Dell", model: "Optiplex 9020", serial: "12346", purchased_on: "2015-09-15", warranty_length: 3, warranty_type: "NBD", user_id: u[1].id)
+d[2] = Device.create(name: "lap-0111", tag: 111, dev_type: "Laptop", make: "Dell", model: "XPS 13", serial: "12347", purchased_on: "2013-05-05", warranty_length: 3, warranty_type: "NBD", user_id: u[4].id)
 
 Licence.create(vendor: "Microsoft", app_name: "Windows", version: "10", edition: "Professional", channel: "OEM", purchased_from: "Dell", purchased_on: "2015-11-10")
 Licence.create(vendor: "Microsoft", app_name: "Windows", version: "10", edition: "Professional", channel: "OEM", purchased_from: "Dell", purchased_on: "2015-09-15")
