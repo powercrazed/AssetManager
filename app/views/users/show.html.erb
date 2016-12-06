@@ -16,11 +16,53 @@
     <dd><%= @user.last_name %></dd>
     <dt>Location:</dt>
     <dd><%= @user.location %></dd>
+    <dt>Device:</dt>
+    <dd><%= @user.device.try(:name) %></dd>
   </dl>
   <hr />
 
   <%= link_to 'Edit', edit_user_path(@user), class: "btn btn-primary" %>
   <%= link_to 'Back', users_path, class: "btn btn-primary" %>
-</div>
 
-<%= debug @user %>
+  <h2>User Licences</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Vendor</th>
+        <th>Application</th>
+        <th>Channel</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @user.licences.each do |l| %>
+        <tr>
+          <td><%= "#{l.vendor}" %></td>
+          <td><%= "#{l.app_full}" %></td>
+          <td><%= "#{l.channel}" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <h2>Device Licences</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Vendor</th>
+        <th>Application</th>
+        <th>Channel</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @user.device.licences.each do |l| %>
+        <tr>
+          <td><%= "#{l.vendor}" %></td>
+          <td><%= "#{l.app_full}" %></td>
+          <td><%= "#{l.channel}" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

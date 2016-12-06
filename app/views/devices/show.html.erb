@@ -31,10 +31,51 @@
     <dt>User:</dt>
     <dd><%= @device.user.try(:full_name) %></dd>
   </dl>
+
   <hr />
 
   <%= link_to 'Edit', edit_device_path(@device), class: "btn btn-primary" %>
   <%= link_to 'Back', devices_path, class: "btn btn-primary" %>
-</div>
 
-<%= debug @device %>
+  <h2>Device Licences</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Vendor</th>
+        <th>Application</th>
+        <th>Channel</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @device.licences.each do |l| %>
+        <tr>
+          <td><%= "#{l.vendor}" %></td>
+          <td><%= "#{l.app_full}" %></td>
+          <td><%= "#{l.channel}" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <h2>User Licences</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Vendor</th>
+        <th>Application</th>
+        <th>Channel</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @device.user.licences.each do |l| %>
+        <tr>
+          <td><%= "#{l.vendor}" %></td>
+          <td><%= "#{l.app_full}" %></td>
+          <td><%= "#{l.channel}" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
