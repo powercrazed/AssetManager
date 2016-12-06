@@ -28,6 +28,8 @@
     <dd><%= @device.warranty_length %></dd>
     <dt>Warranty Type:</dt>
     <dd><%= @device.warranty_type %></dd>
+    <dt>User:</dt>
+    <dd><%= @device.user.try(:full_name) %></dd>
   </dl>
   <hr />
 
