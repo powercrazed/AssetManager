@@ -69,7 +69,7 @@
     </thead>
 
     <tbody>
-      <% @device.user.licences.each do |l| %>
+      <% @device.user.try(:licences).try(:each) do |l| %>
         <tr>
           <td><%= "#{l.vendor}" %></td>
           <td><%= "#{l.app_full}" %></td>
