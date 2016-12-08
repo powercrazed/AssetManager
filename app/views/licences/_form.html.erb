@@ -78,9 +78,9 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :user_id, class: "col-xs-12 col-sm-2 control-label" %>
+    <%= f.label :person_id, class: "col-xs-12 col-sm-2 control-label" %>
     <div class="col-xs-10 col-sm-4">
-      <%= f.collection_select :user_id, User.order(:last_name), :id, :full_name, {prompt: true, include_blank: "None"}, {class: "form-control"} %>
+      <%= f.collection_select :person_id, Person.order(:last_name), :id, :full_name, {prompt: true, include_blank: "None"}, {class: "form-control"} %>
     </div>
   </div>
 

@@ -28,8 +28,8 @@
     <dd><%= @licence.in_use %></dd>
     <dt>Device:</dt>
     <dd><%= @licence.device.try(:name) %></dd>
-    <dt>User:</dt>
-    <dd><%= @licence.user.try(:full_name) %></dd>
+    <dt>Person:</dt>
+    <dd><%= @licence.person.try(:full_name) %></dd>
   </dl>
   <hr />
 
