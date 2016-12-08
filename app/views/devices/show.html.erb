@@ -28,8 +28,8 @@
     <dd><%= @device.warranty_length %></dd>
     <dt>Warranty Type:</dt>
     <dd><%= @device.warranty_type %></dd>
-    <dt>User:</dt>
-    <dd><%= @device.user.try(:full_name) %></dd>
+    <dt>Person:</dt>
+    <dd><%= @device.person.try(:full_name) %></dd>
   </dl>
 
   <hr />
@@ -58,7 +58,7 @@
     </tbody>
   </table>
 
-  <h2>User Licences</h2>
+  <h2>Person Licences</h2>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -69,7 +69,7 @@
     </thead>
 
     <tbody>
-      <% @device.user.try(:licences).try(:each) do |l| %>
+      <% @device.person.try(:licences).try(:each) do |l| %>
         <tr>
           <td><%= "#{l.vendor}" %></td>
           <td><%= "#{l.app_full}" %></td>

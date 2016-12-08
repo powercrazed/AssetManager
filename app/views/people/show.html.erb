@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Showing user - <%= h @user.id %></h1>
+  <h1>Showing person - <%= h @person.id %></h1>
 
   <% if notice %>
     <div id="notice" class="alert alert-success alert-dismissible">
@@ -11,20 +11,20 @@
   <hr />
   <dl class="dl-horizontal">
     <dt>First Name:</dt>
-    <dd><%= @user.first_name %></dd>
+    <dd><%= @person.first_name %></dd>
     <dt>Last Name:</dt>
-    <dd><%= @user.last_name %></dd>
+    <dd><%= @person.last_name %></dd>
     <dt>Location:</dt>
-    <dd><%= @user.location %></dd>
+    <dd><%= @person.location %></dd>
     <dt>Device:</dt>
-    <dd><%= @user.device.try(:name) %></dd>
+    <dd><%= @person.device.try(:name) %></dd>
   </dl>
   <hr />
 
-  <%= link_to 'Edit', edit_user_path(@user), class: "btn btn-primary" %>
-  <%= link_to 'Back', users_path, class: "btn btn-primary" %>
+  <%= link_to 'Edit', edit_person_path(@person), class: "btn btn-primary" %>
+  <%= link_to 'Back', people_path, class: "btn btn-primary" %>
 
-  <h2>User Licences</h2>
+  <h2>Person Licences</h2>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -35,7 +35,7 @@
     </thead>
 
     <tbody>
-      <% @user.licences.each do |l| %>
+      <% @person.licences.each do |l| %>
         <tr>
           <td><%= "#{l.vendor}" %></td>
           <td><%= "#{l.app_full}" %></td>
@@ -56,7 +56,7 @@
     </thead>
 
     <tbody>
-      <% @user.device.licences.each do |l| %>
+      <% @person.device.licences.each do |l| %>
         <tr>
           <td><%= "#{l.vendor}" %></td>
           <td><%= "#{l.app_full}" %></td>
