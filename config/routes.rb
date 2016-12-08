@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: redirect(path: 'licences', status: 302)
 
-  resources :users
+  resources :people
   resources :devices
   resources :licences
 
