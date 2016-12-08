@@ -64,6 +64,13 @@
   </div>
 
   <div class="form-group">
+    <%= f.label :in_use, class: "col-xs-12 col-sm-2 control-label" %>
+    <div class="col-xs-10 col-sm-4">
+      <%= f.select :in_use, [["Yes", true],["No", false]], {prompt: true}, {class: "form-control"} %>
+    </div>
+  </div>
+
+  <div class="form-group">
     <%= f.label :device_id, class: "col-xs-12 col-sm-2 control-label" %>
     <div class="col-xs-10 col-sm-4">
       <%= f.collection_select :device_id, Device.order(:tag), :id, :name, {prompt: true}, {class: "form-control"} %>

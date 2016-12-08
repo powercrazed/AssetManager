@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161205132933) do
+ActiveRecord::Schema.define(version: 20161206214631) do
 
   create_table "devices", force: :cascade do |t|
     t.string   "name"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20161205132933) do
     t.datetime "updated_at",     null: false
     t.integer  "device_id"
     t.integer  "user_id"
+    t.boolean  "in_use"
   end
 
   add_index "licences", ["device_id"], name: "index_licences_on_device_id"
