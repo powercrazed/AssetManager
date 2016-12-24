@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users
   root to: redirect(path: 'licences', status: 302)
 
   resources :people
   resources :devices
   resources :licences
 
+  devise_for :users
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
