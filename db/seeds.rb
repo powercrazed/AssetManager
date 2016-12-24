@@ -25,3 +25,6 @@ Licence.create(vendor: "Adobe", app_name: "Creative Cloud", version: "n/a", edit
 Licence.create(vendor: "Microsoft", app_name: "Office", version: "365", edition: "Business", channel: "Subscription", purchased_from: "Reseller 1", purchased_on: "2015-10-02", device_id: nil, person_id: p[0].id, in_use: true)
 Licence.create(vendor: "Microsoft", app_name: "Office", version: "365", edition: "Business", channel: "Subscription", purchased_from: "Reseller 1", purchased_on: "2015-10-02", device_id: nil, person_id: p[1].id, in_use: true)
 Licence.create(vendor: "Microsoft", app_name: "Visual Studio", version: "2015", edition: "Professional", channel: "OLV", purchased_from: "Reseller 1", purchased_on: "2016-08-20", device_id: nil, person_id: p[3].id, in_use: true)
+
+User.create(email: "test@test.com", password: "test123", password_confirmation: "test123")
+User.create(email: "test2@test.com", password: "test456", password_confirmation: "test456")
