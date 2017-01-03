@@ -59,6 +59,6 @@ class LicencesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def licence_params
-      params.require(:licence).permit(:vendor, :app_name, :version, :edition, :channel, :purchased_from, :purchased_on, :device_id, :person_id, :in_use)
+      params.require(:licence).permit(:vendor, :app_name, :version, :edition, :channel, :purchased_from, :purchased_on, :device_id, :person_id, :in_use, :notes)
     end
 end
