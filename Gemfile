@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+# add devise for user authentication
+gem 'devise'
 
 # add bootstrap support
 gem 'bootstrap-sass', '~> 3.2.0'
