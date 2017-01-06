@@ -21,7 +21,7 @@
         <td><%= device.make %></td>
         <td><%= device.model %></td>
         <td><%= device.person.try(:full_name) %></td>
-        <td class="fit"><%= link_to 'Show', device, class: "btn btn-primary" %></td>
+        <td class="fit"><%= link_to 'Show', device, class: "btn btn-success" %></td>
         <% if user_signed_in? %>
           <td class="fit"><%= link_to 'Edit', edit_device_path(device), class: "btn btn-primary" %></td>
           <td class="fit"><%= link_to 'Delete', device, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>

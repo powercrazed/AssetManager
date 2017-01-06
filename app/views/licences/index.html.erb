@@ -23,7 +23,7 @@
         <td><%= licence.channel %></td>
         <td><%= licence.device.try(:name) %></td>
         <td><%= licence.person.try(:full_name) %></td>
-        <td class="fit"><%= link_to 'Show', licence, class: "btn btn-primary" %></td>
+        <td class="fit"><%= link_to 'Show', licence, class: "btn btn-success" %></td>
         <% if user_signed_in? %>
           <td class="fit"><%= link_to 'Edit', edit_licence_path(licence), class: "btn btn-primary" %></td>
           <td class="fit"><%= link_to 'Delete', licence, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>

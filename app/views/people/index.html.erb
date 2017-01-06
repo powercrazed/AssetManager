@@ -14,7 +14,7 @@
       <tr>
         <td><%= person.full_name %></td>
         <td><%= person.location %></td>
-        <td class="fit"><%= link_to 'Show', person, class: "btn btn-primary" %></td>
+        <td class="fit"><%= link_to 'Show', person, class: "btn btn-success" %></td>
         <% if user_signed_in? %>
           <td class="fit"><%= link_to 'Edit', edit_person_path(person), class: "btn btn-primary" %></td>
           <td class="fit"><%= link_to 'Delete', person, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
