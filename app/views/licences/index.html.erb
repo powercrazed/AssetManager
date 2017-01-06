@@ -24,11 +24,17 @@
         <td><%= licence.device.try(:name) %></td>
         <td><%= licence.person.try(:full_name) %></td>
         <td class="fit"><%= link_to 'Show', licence, class: "btn btn-primary" %></td>
-        <td class="fit"><%= link_to 'Edit', edit_licence_path(licence), class: "btn btn-primary" %></td>
-        <td class="fit"><%= link_to 'Delete', licence, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+        <% if user_signed_in? %>
+          <td class="fit"><%= link_to 'Edit', edit_licence_path(licence), class: "btn btn-primary" %></td>
+          <td class="fit"><%= link_to 'Delete', licence, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+        <% else %>
+          <td colspan="2>" class="fit"></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 <br>
-<%= link_to 'New Licence', new_licence_path, class: "btn btn-primary" %>
+<% if user_signed_in? %>
+  <%= link_to 'New Licence', new_licence_path, class: "btn btn-primary" %>
+<% end %>

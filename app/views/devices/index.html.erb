@@ -22,11 +22,17 @@
         <td><%= device.model %></td>
         <td><%= device.person.try(:full_name) %></td>
         <td class="fit"><%= link_to 'Show', device, class: "btn btn-primary" %></td>
-        <td class="fit"><%= link_to 'Edit', edit_device_path(device), class: "btn btn-primary" %></td>
-        <td class="fit"><%= link_to 'Delete', device, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+        <% if user_signed_in? %>
+          <td class="fit"><%= link_to 'Edit', edit_device_path(device), class: "btn btn-primary" %></td>
+          <td class="fit"><%= link_to 'Delete', device, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+        <% else %>
+          <td colspan="2>" class="fit"></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 <br>
-<%= link_to 'New Device', new_device_path, class: "btn btn-primary" %>
+<% if user_signed_in? %>
+  <%= link_to 'New Device', new_device_path, class: "btn btn-primary" %>
+<% end %>
