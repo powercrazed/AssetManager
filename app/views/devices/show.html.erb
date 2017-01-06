@@ -1,81 +1,79 @@
-<div class="container">
-  <h1>Showing Device - <%= h @device.id %></h1>
+<h1>Showing Device - <%= h @device.id %></h1>
 
-  <% if notice %>
-    <div id="notice" class="alert alert-success alert-dismissible">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <%= notice %>
-    </div>
-  <% end %>
+<% if notice %>
+  <div id="notice" class="alert alert-success alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <%= notice %>
+  </div>
+<% end %>
 
-  <hr />
-  <dl class="dl-horizontal">
-    <dt>Asset Tag:</dt>
-    <dd><%= @device.tag_formatted %></dd>
-    <dt>Name:</dt>
-    <dd><%= @device.name %></dd>
-    <dt>Type:</dt>
-    <dd><%= @device.dev_type %></dd>
-    <dt>Make:</dt>
-    <dd><%= @device.make %></dd>
-    <dt>Model:</dt>
-    <dd><%= @device.model %></dd>
-    <dt>Serial:</dt>
-    <dd><%= @device.serial %></dd>
-    <dt>Purchased:</dt>
-    <dd><%= @device.purchased_on %></dd>
-    <dt>Warranty length:</dt>
-    <dd><%= @device.warranty_length %></dd>
-    <dt>Warranty Type:</dt>
-    <dd><%= @device.warranty_type %></dd>
-    <dt>Person:</dt>
-    <dd><%= @device.person.try(:full_name) %></dd>
-  </dl>
+<hr />
+<dl class="dl-horizontal">
+  <dt>Asset Tag:</dt>
+  <dd><%= @device.tag_formatted %></dd>
+  <dt>Name:</dt>
+  <dd><%= @device.name %></dd>
+  <dt>Type:</dt>
+  <dd><%= @device.dev_type %></dd>
+  <dt>Make:</dt>
+  <dd><%= @device.make %></dd>
+  <dt>Model:</dt>
+  <dd><%= @device.model %></dd>
+  <dt>Serial:</dt>
+  <dd><%= @device.serial %></dd>
+  <dt>Purchased:</dt>
+  <dd><%= @device.purchased_on %></dd>
+  <dt>Warranty length:</dt>
+  <dd><%= @device.warranty_length %></dd>
+  <dt>Warranty Type:</dt>
+  <dd><%= @device.warranty_type %></dd>
+  <dt>Person:</dt>
+  <dd><%= @device.person.try(:full_name) %></dd>
+</dl>
 
-  <hr />
+<hr />
 
-  <%= link_to 'Edit', edit_device_path(@device), class: "btn btn-primary" %>
-  <%= link_to 'Back', devices_path, class: "btn btn-primary" %>
+<%= link_to 'Edit', edit_device_path(@device), class: "btn btn-primary" %>
+<%= link_to 'Back', devices_path, class: "btn btn-primary" %>
 
-  <h2>Device Licences</h2>
-  <table class="table table-striped">
-    <thead>
+<h2>Device Licences</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Vendor</th>
+      <th>Application</th>
+      <th>Channel</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @device.licences.each do |l| %>
       <tr>
-        <th>Vendor</th>
-        <th>Application</th>
-        <th>Channel</th>
+        <td><%= "#{l.vendor}" %></td>
+        <td><%= "#{l.app_full}" %></td>
+        <td><%= "#{l.channel}" %></td>
       </tr>
-    </thead>
+    <% end %>
+  </tbody>
+</table>
 
-    <tbody>
-      <% @device.licences.each do |l| %>
-        <tr>
-          <td><%= "#{l.vendor}" %></td>
-          <td><%= "#{l.app_full}" %></td>
-          <td><%= "#{l.channel}" %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+<h2>Person Licences</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Vendor</th>
+      <th>Application</th>
+      <th>Channel</th>
+    </tr>
+  </thead>
 
-  <h2>Person Licences</h2>
-  <table class="table table-striped">
-    <thead>
+  <tbody>
+    <% @device.person.try(:licences).try(:each) do |l| %>
       <tr>
-        <th>Vendor</th>
-        <th>Application</th>
-        <th>Channel</th>
+        <td><%= "#{l.vendor}" %></td>
+        <td><%= "#{l.app_full}" %></td>
+        <td><%= "#{l.channel}" %></td>
       </tr>
-    </thead>
-
-    <tbody>
-      <% @device.person.try(:licences).try(:each) do |l| %>
-        <tr>
-          <td><%= "#{l.vendor}" %></td>
-          <td><%= "#{l.app_full}" %></td>
-          <td><%= "#{l.channel}" %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+    <% end %>
+  </tbody>
+</table>

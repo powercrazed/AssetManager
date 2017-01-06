@@ -1,38 +1,36 @@
-<div class="container">
-  <h1>Showing Licence - <%= h @licence.id %></h1>
+<h1>Showing Licence - <%= h @licence.id %></h1>
 
-  <% if notice %>
-    <div id="notice" class="alert alert-success alert-dismissible">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <%= notice %>
-    </div>
-  <% end %>
+<% if notice %>
+  <div id="notice" class="alert alert-success alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <%= notice %>
+  </div>
+<% end %>
 
-  <hr />
-  <dl class="dl-horizontal">
-    <dt>Vendor:</dt>
-    <dd><%= @licence.vendor %></dd>
-    <dt>Application:</dt>
-    <dd><%= @licence.app_name %></dd>
-    <dt>Version:</dt>
-    <dd><%= @licence.version %></dd>
-    <dt>Edition:</dt>
-    <dd><%= @licence.edition %></dd>
-    <dt>Channel:</dt>
-    <dd><%= @licence.channel %></dd>
-    <dt>Purchased From:</dt>
-    <dd><%= @licence.purchased_from %></dd>
-    <dt>Purchased on</dt>
-    <dd><%= @licence.purchased_on %></dd>
-    <dt>In Use:</dt>
-    <dd><%= @licence.in_use %></dd>
-    <dt>Device:</dt>
-    <dd><%= @licence.device.try(:name) %></dd>
-    <dt>Person:</dt>
-    <dd><%= @licence.person.try(:full_name) %></dd>
-  </dl>
-  <hr />
+<hr />
+<dl class="dl-horizontal">
+  <dt>Vendor:</dt>
+  <dd><%= @licence.vendor %></dd>
+  <dt>Application:</dt>
+  <dd><%= @licence.app_name %></dd>
+  <dt>Version:</dt>
+  <dd><%= @licence.version %></dd>
+  <dt>Edition:</dt>
+  <dd><%= @licence.edition %></dd>
+  <dt>Channel:</dt>
+  <dd><%= @licence.channel %></dd>
+  <dt>Purchased From:</dt>
+  <dd><%= @licence.purchased_from %></dd>
+  <dt>Purchased on</dt>
+  <dd><%= @licence.purchased_on %></dd>
+  <dt>In Use:</dt>
+  <dd><%= @licence.in_use %></dd>
+  <dt>Device:</dt>
+  <dd><%= @licence.device.try(:name) %></dd>
+  <dt>Person:</dt>
+  <dd><%= @licence.person.try(:full_name) %></dd>
+</dl>
+<hr />
 
-  <%= link_to 'Edit', edit_licence_path(@licence), class: "btn btn-primary" %>
-  <%= link_to 'Back', licences_path, class: "btn btn-primary" %>
-</div>
+<%= link_to 'Edit', edit_licence_path(@licence), class: "btn btn-primary" %>
+<%= link_to 'Back', licences_path, class: "btn btn-primary" %>
