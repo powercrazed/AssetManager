@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root to: redirect(path: 'licences', status: 302)
 
-  resources :people
+  resources :people do
+    collection { post :import }
+  end
   resources :devices
   resources :licences
 
