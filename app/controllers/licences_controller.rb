@@ -56,9 +56,9 @@ class LicencesController < ApplicationController
   def import
     begin
       Licence.import(params[:file])
-      redirect_to licence_url, notice: "Import sucessful"
+      redirect_to licences_url, notice: "Import sucessful"
     rescue
-      redirect_to licence_url, notice: "Import failed"
+      redirect_to licences_url, notice: "Import failed"
     end
   end
 
