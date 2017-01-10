@@ -1,4 +1,5 @@
 class Device < ActiveRecord::Base
+  require 'csv'
   validates :tag, :name, presence: true, uniqueness: true
 
   belongs_to :person, :inverse_of => :device
@@ -6,5 +7,18 @@ class Device < ActiveRecord::Base
 
   def tag_formatted
     "%04d" % tag
+  end
+
+  def self.import(file)
+    CSV.foreach(file.path, headers: true) do |row|
+
+      device_hash = row.to_hash
+      device = Device.where(name: device_hash["name"])
+
+      # create if not in database
+      if device.count == 0
+        Device.create! device_hash
+      end
+    end
   end
 end
