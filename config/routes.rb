@@ -4,8 +4,12 @@ Rails.application.routes.draw do
   resources :people do
     collection { post :import }
   end
+  
   resources :devices
-  resources :licences
+
+  resources :licences do
+    collection { post :import }
+  end
 
   devise_for :users, :skip => [:registrations]
     as :user do
