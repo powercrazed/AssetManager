@@ -1,5 +1,4 @@
 class Licence < ActiveRecord::Base
-  require 'csv'
   validates :vendor, :app_name, :version, :edition, presence: true
   validates_inclusion_of :in_use, in: [true, false]
 

@@ -1,5 +1,4 @@
 class Device < ActiveRecord::Base
-  require 'csv'
   validates :tag, :name, presence: true, uniqueness: true
 
   belongs_to :person, :inverse_of => :device

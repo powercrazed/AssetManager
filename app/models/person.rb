@@ -1,5 +1,4 @@
 class Person < ActiveRecord::Base
-  require 'csv'
   validates :first_name, :last_name, presence: true
 
   has_one :device, :inverse_of => :person
