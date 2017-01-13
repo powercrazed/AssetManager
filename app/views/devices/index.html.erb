@@ -35,4 +35,16 @@
 <br>
 <% if user_signed_in? %>
   <%= link_to 'New Device', new_device_path, class: "btn btn-primary" %>
+
+  <h3>Import Data</h3>
+  <%= form_tag import_devices_path, multipart: true, class: "form-inline" do %>
+    <div class="form-group">
+      <%= file_field_tag :file, class: "form-control" %>
+    </div>
+
+    <div class="actions form-group">
+      <%= submit_tag "Import CSV", class: "btn btn-success" %>
+      <%= link_to 'Download a template csv', asset_path("devices_template.csv"), class: "btn btn-link" %>
+    </div>
+  <% end %>
 <% end %>

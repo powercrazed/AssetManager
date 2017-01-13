@@ -62,6 +62,16 @@ class PeopleController < ApplicationController
     end
   end
 
+  # POST /people/import
+  def import
+    begin
+      Person.import(params[:file])
+      redirect_to people_url, notice: "Import sucessful"
+    rescue
+      redirect_to people_url, notice: "Import failed"
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_person

@@ -52,6 +52,16 @@ class LicencesController < ApplicationController
     end
   end
 
+  # POST /licences/import
+  def import
+    begin
+      Licence.import(params[:file])
+      redirect_to licences_url, notice: "Import sucessful"
+    rescue
+      redirect_to licences_url, notice: "Import failed"
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_licence

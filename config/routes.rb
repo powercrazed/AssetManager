@@ -1,9 +1,17 @@
 Rails.application.routes.draw do
   root to: redirect(path: 'licences', status: 302)
 
-  resources :people
-  resources :devices
-  resources :licences
+  resources :people do
+    collection { post :import }
+  end
+
+  resources :devices do
+    collection { post :import }
+  end
+
+  resources :licences do
+    collection { post :import }
+  end
 
   devise_for :users, :skip => [:registrations]
     as :user do

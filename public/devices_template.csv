@@ -1,0 +1,5 @@
+name,tag,dev_type,make,model,serial,purchased_on,warranty_length,warranty_type,notes,
+string,integer,string,string,string,string,date,integer,string,text,delete this line before uploading
+required,required,,,,,,,,,delete this line before uploading
+desk-0001,1,desktop,dell,vostro 470 mt,12345abc,2015-11-08,3,nbd,this is a note,delete this line before uploading
+lap-0203,203,laptop,hp,probook 430,a1b2c3,2016-06-20,3,nbd,more notes,delete this line before uploading
