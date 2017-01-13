@@ -16,8 +16,9 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
+// close alert after 2s = 2000ms
 window.setTimeout(function() {
     $(".alert").fadeTo(500, 0).slideUp(500, function(){
         $(this).remove();
     });
-}, 4000);
+}, 2000);
