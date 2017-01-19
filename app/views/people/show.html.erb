@@ -1,0 +1,68 @@
+<h1>Showing person - <%= h @person.id %></h1>
+
+<% if notice %>
+  <div id="notice" class="alert alert-success alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <%= notice %>
+  </div>
+<% end %>
+
+<hr />
+<dl class="dl-horizontal">
+  <dt>First Name:</dt>
+  <dd><%= @person.first_name %></dd>
+  <dt>Last Name:</dt>
+  <dd><%= @person.last_name %></dd>
+  <dt>Location:</dt>
+  <dd><%= @person.location %></dd>
+  <dt>Device:</dt>
+  <dd><%= @person.device.try(:name) %></dd>
+</dl>
+<hr />
+
+<% if user_signed_in? %>
+  <%= link_to 'Edit', edit_person_path(@person), class: "btn btn-primary" %>
+<% end %>
+<%= link_to 'Back', people_path, class: "btn btn-primary" %>
+
+<h2>Person Licences</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Vendor</th>
+      <th>Application</th>
+      <th>Channel</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @person.licences.each do |l| %>
+      <tr>
+        <td><%= "#{l.vendor}" %></td>
+        <td><%= "#{l.app_full}" %></td>
+        <td><%= "#{l.channel}" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h2>Device Licences</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Vendor</th>
+      <th>Application</th>
+      <th>Channel</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @person.device.try(:licences).try(:each) do |l| %>
+      <tr>
+        <td><%= "#{l.vendor}" %></td>
+        <td><%= "#{l.app_full}" %></td>
+        <td><%= "#{l.channel}" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

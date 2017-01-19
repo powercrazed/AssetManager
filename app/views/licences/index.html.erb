@@ -1,0 +1,52 @@
+<h1>Licences</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Vendor</th>
+      <th>Application</th>
+      <th>Version</th>
+      <th>Edition</th>
+      <th>Channel</th>
+      <th>Device</th>
+      <th>Person</th>
+      <th colspan="3" class="fit"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @licences.each do |licence| %>
+      <tr>
+        <td><%= licence.vendor %></td>
+        <td><%= licence.app_name %></td>
+        <td><%= licence.version %></td>
+        <td><%= licence.edition %></td>
+        <td><%= licence.channel %></td>
+        <td><%= licence.device.try(:name) %></td>
+        <td><%= licence.person.try(:full_name) %></td>
+        <td class="fit"><%= link_to 'Show', licence, class: "btn btn-success" %></td>
+        <% if user_signed_in? %>
+          <td class="fit"><%= link_to 'Edit', edit_licence_path(licence), class: "btn btn-primary" %></td>
+          <td class="fit"><%= link_to 'Delete', licence, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+        <% else %>
+          <td colspan="2>" class="fit"></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<% if user_signed_in? %>
+  <%= link_to 'New Licence', new_licence_path, class: "btn btn-primary" %>
+
+  <h3>Import Data</h3>
+  <%= form_tag import_licences_path, multipart: true, class: "form-inline" do %>
+    <div class="form-group">
+      <%= file_field_tag :file, class: "form-control" %>
+    </div>
+
+    <div class="actions form-group">
+      <%= submit_tag "Import CSV", class: "btn btn-success" %>
+      <%= link_to 'Download a template csv', asset_path("licences_template.csv"), class: "btn btn-link" %>
+    </div>
+  <% end %>
+<% end %>

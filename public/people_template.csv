@@ -1,0 +1,5 @@
+first_name,last_name,location,notes
+string,string,string,string,delete this line before uploading
+required,required,,,delete this line before uploading
+alex,burton,office 1,a note,delete this line before uploading
+colin,davies,home,more notes,delete this line before uploading
