@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     collection { post :import }
   end
 
+  get 'import' => 'import#index'
+
   devise_for :users, :skip => [:registrations]
     as :user do
       get 'users/edit' => 'devise/registrations#edit', :as => 'edit_user_registration'
