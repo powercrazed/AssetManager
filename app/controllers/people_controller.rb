@@ -66,9 +66,9 @@ class PeopleController < ApplicationController
   def import
     begin
       Person.import(params[:file])
-      redirect_to people_url, notice: "Import sucessful"
+      redirect_to import_url, notice: "Person Import Sucessful"
     rescue
-      redirect_to people_url, notice: "Import failed"
+      redirect_to import_url, notice: "Person Import Failed"
     end
   end
 
