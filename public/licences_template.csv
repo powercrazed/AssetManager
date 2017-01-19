@@ -1,5 +1,5 @@
-vendor,app_name,version,edition,channel,purchased_from,purchased_on,in_use,notes
-string,string,string,string,string,string,date,boolean,text,delete this line before uploading
-required,required,required,required,,,,required,,delete this line before uploading
-Microsoft,Windows,10,Professional,OEM,manufacturer name,2016-11-10,TRUE,a note,delete this line before uploading
-Adobe,Creative Cloud,n/a,n/a,Subscription,Reseller name,2015-04-16,FALSE,another note,delete this line before uploading
+vendor,app_name,version,edition,channel,purchased_from,purchased_on,in_use,notes,device_name,first_name,last_name
+string,string,string,string,string,string,date,boolean,text,string,string,string,delete this line before uploading
+required,required,required,required,,,,required,,,,,delete this line before uploading
+Microsoft,Windows,10,Professional,OEM,manufacturer name,2016-11-10,TRUE,a note,lap-0111,,,delete this line before uploading
+Adobe,Creative Cloud,n/a,n/a,Subscription,Reseller name,2015-04-16,FALSE,another note,,Isaac,Sanders,delete this line before uploading
