@@ -30,9 +30,11 @@
           <%= link_to 'People', people_path %>
         </li>
 
-        <li class="<%= is_active(import_path) %>">
-          <%= link_to 'Import Data', import_path %>
-        </li>
+        <% if user_signed_in? %>
+          <li class="<%= is_active(import_path) %>">
+            <%= link_to 'Import Data', import_path %>
+          </li>
+        <% end %>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
