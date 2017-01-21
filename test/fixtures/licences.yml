@@ -7,7 +7,7 @@ one:
   edition: MyString
   channel: MyString
   purchased_from: MyString
-  purchased_date: 2016-11-23
+  purchased_on: 2016-11-23
 
 two:
   vendor: MyString
@@ -16,4 +16,4 @@ two:
   edition: MyString
   channel: MyString
   purchased_from: MyString
-  purchased_date: 2016-11-23
+  purchased_on: 2016-11-23
