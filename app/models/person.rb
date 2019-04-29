@@ -1,4 +1,4 @@
-class Person < ActiveRecord::Base
+class Person < ApplicationRecord
   validates :first_name, :last_name, presence: true
 
   has_one :device, :inverse_of => :person
