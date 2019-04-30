@@ -56,9 +56,9 @@ class DevicesController < ApplicationController
   def import
     begin
       Device.import(params[:file])
-      redirect_to devices_url, notice: "Import sucessful"
+      redirect_to import_url, notice: "Device Import Sucessful"
     rescue
-      redirect_to devices_url, notice: "Import failed"
+      redirect_to import_url, notice: "Device Import Failed"
     end
   end
 

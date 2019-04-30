@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  name: Device1
   tag: 1
-  type: 
+  dev_type: MyString
   make: MyString
   model: MyString
   serial: MyString
@@ -12,9 +12,9 @@ one:
   warranty_type: MyString
 
 two:
-  name: MyString
-  tag: 1
-  type: 
+  name: Device2
+  tag: 2
+  dev_type: MyString
   make: MyString
   model: MyString
   serial: MyString

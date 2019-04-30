@@ -1,0 +1,37 @@
+<h1>Import Data</h1>
+
+<h3>Import People</h3>
+<%= form_tag import_people_path, multipart: true, class: "form-inline" do %>
+  <div class="form-group">
+    <%= file_field_tag :file, class: "form-control" %>
+  </div>
+
+  <div class="actions form-group">
+    <%= submit_tag "Import CSV", class: "btn btn-success" %>
+    <%= link_to 'Download a template csv', asset_path("people_template.csv"), class: "btn btn-link" %>
+  </div>
+<% end %>
+
+<h3>Import Devices</h3>
+<%= form_tag import_devices_path, multipart: true, class: "form-inline" do %>
+  <div class="form-group">
+    <%= file_field_tag :file, class: "form-control" %>
+  </div>
+
+  <div class="actions form-group">
+    <%= submit_tag "Import CSV", class: "btn btn-success" %>
+    <%= link_to 'Download a template csv', asset_path("devices_template.csv"), class: "btn btn-link" %>
+  </div>
+<% end %>
+
+<h3>Import Licences</h3>
+<%= form_tag import_licences_path, multipart: true, class: "form-inline" do %>
+  <div class="form-group">
+    <%= file_field_tag :file, class: "form-control" %>
+  </div>
+
+  <div class="actions form-group">
+    <%= submit_tag "Import CSV", class: "btn btn-success" %>
+    <%= link_to 'Download a template csv', asset_path("licences_template.csv"), class: "btn btn-link" %>
+  </div>
+<% end %>

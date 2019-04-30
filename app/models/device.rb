@@ -1,4 +1,4 @@
-class Device < ActiveRecord::Base
+class Device < ApplicationRecord
   validates :tag, :name, presence: true, uniqueness: true
 
   belongs_to :person, :inverse_of => :device
