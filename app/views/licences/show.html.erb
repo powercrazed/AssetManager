@@ -1,4 +1,4 @@
-<h1>Showing Licence - <%= h @licence.id %></h1>
+<h1>Licence <%= h @licence.id %></h1>
 
 <% if notice %>
   <div id="notice" class="alert alert-success alert-dismissible">
@@ -25,6 +25,7 @@
   <dd><%= @licence.purchased_on %></dd>
   <dt>In Use:</dt>
   <dd><%= @licence.in_use %></dd>
+  <legend>Assigned to</legend>
   <dt>Device:</dt>
   <dd><%= @licence.device.try(:name) %></dd>
   <dt>Person:</dt>
