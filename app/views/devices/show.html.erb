@@ -1,4 +1,4 @@
-<h1>Showing Device - <%= h @device.id %></h1>
+<h1><%= @device.name %></h1>
 
 <% if notice %>
   <div id="notice" class="alert alert-success alert-dismissible">
@@ -27,7 +27,7 @@
   <dd><%= @device.warranty_length %></dd>
   <dt>Warranty Type:</dt>
   <dd><%= @device.warranty_type %></dd>
-  <dt>Person:</dt>
+  <dt>Assigned to:</dt>
   <dd><%= @device.person.try(:full_name) %></dd>
 </dl>
 
