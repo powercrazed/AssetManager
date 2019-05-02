@@ -6,7 +6,7 @@ class Licence < ApplicationRecord
   belongs_to :person, :inverse_of => :licences
 
   def app_full
-    "#{app_name} #{version} #{edition}"
+    "#{vendor} #{app_name} #{version} #{edition}"
   end
 
   def self.import(file)
