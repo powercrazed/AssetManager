@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'devise'
 
 # add bootstrap support
-gem 'bootstrap-sass', '~> 3.4.1'
+gem 'bootstrap', '~> 4.3.1'
 gem 'autoprefixer-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
