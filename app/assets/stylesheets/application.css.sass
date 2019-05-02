@@ -32,10 +32,12 @@ select.form-control
   width: auto
   display: inline
 
+//
 html
   position: relative
   min-height: 100%
 
+//
 .footer
   position: absolute
   bottom: 0
@@ -45,6 +47,16 @@ html
   // line-height = height for single line vertically centered
   line-height: 60px
   background-color: $gray-200
+
+// styles for dl's on the show views
+dl.show
+  @extend .row
+  dt
+    @extend .col-2
+    @extend .text-right
+  dd
+    @extend .col-10
+    @extend .text-left
 
 // // form error formatting
 // .field_with_errors
