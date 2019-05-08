@@ -15,77 +15,77 @@
 <%= form_for @device do |f| %>
 
   <div class="form-group row">
-    <%= f.label :tag, class: "col-sm-2 control-label" %>
+    <%= f.label :tag, class: "col-sm-2 col-form-label text-right" %>
     <div class="col-sm-4">
       <%= f.text_field :tag, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group row">
-    <%= f.label :name, class: "col-sm-2 control-label" %>
+    <%= f.label :name, class: "col-sm-2 col-form-label text-right" %>
     <div class="col-sm-4">
       <%= f.text_field :name, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group row">
-    <%= f.label :dev_type, class: "col-sm-2 control-label" %>
+    <%= f.label :dev_type, class: "col-sm-2 col-form-label text-right" %>
     <div class="col-sm-4">
       <%= f.text_field :dev_type, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group row">
-    <%= f.label :make, class: "col-sm-2 control-label" %>
+    <%= f.label :make, class: "col-sm-2 col-form-label text-right" %>
     <div class="col-sm-4">
       <%= f.text_field :make, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group row">
-    <%= f.label :model, class: "col-sm-2 control-label" %>
+    <%= f.label :model, class: "col-sm-2 col-form-label text-right" %>
     <div class="col-sm-4">
       <%= f.text_field :model, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group row">
-    <%= f.label :serial, class: "col-sm-2 control-label" %>
+    <%= f.label :serial, class: "col-sm-2 col-form-label text-right" %>
     <div class="col-sm-4">
       <%= f.text_field :serial, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group row">
-    <%= f.label :purchased_on, class: "col-sm-2 control-label" %>
+    <%= f.label :purchased_on, class: "col-sm-2 col-form-label text-right" %>
     <div class="col-sm-4">
       <%= f.date_field :purchased_on, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group row">
-    <%= f.label :warranty_length, class: "col-sm-2 control-label" %>
+    <%= f.label :warranty_length, class: "col-sm-2 col-form-label text-right" %>
     <div class="col-sm-4">
       <%= f.text_field :warranty_length, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group row">
-    <%= f.label :warranty_type, class: "col-sm-2 control-label" %>
+    <%= f.label :warranty_type, class: "col-sm-2 col-form-label text-right" %>
     <div class="col-sm-4">
       <%= f.text_field :warranty_type, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group row">
-    <%= f.label :assigned_to, class: "col-sm-2 control-label" %>
+    <%= f.label :assigned_to, class: "col-sm-2 col-form-label text-right" %>
     <div class="col-sm-4">
       <%= f.collection_select :person_id, Person.order(:last_name), :id, :full_name, {prompt: true, include_blank: "None"}, {class: "form-control"} %>
     </div>
   </div>
 
   <div class="form-group row">
-    <%= f.label :notes, class: "col-sm-2 control-label" %>
+    <%= f.label :notes, class: "col-sm-2 col-form-label text-right" %>
     <div class="col-sm-4">
       <%= f.text_area :notes, class: "form-control" %>
     </div>

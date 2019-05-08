@@ -15,56 +15,56 @@
 <%= form_for @licence do |f| %>
 
   <div class="form-group row">
-    <%= f.label :vendor, class: "col-sm-2 control-label" %>
+    <%= f.label :vendor, class: "col-sm-2 col-form-label text-right" %>
     <div class="col-sm-4">
       <%= f.text_field :vendor, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group row">
-    <%= f.label :app_name, class: "col-sm-2 control-label" %>
+    <%= f.label :app_name, class: "col-sm-2 col-form-label text-right" %>
     <div class="col-sm-4">
       <%= f.text_field :app_name, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group row">
-    <%= f.label :version, class: "col-sm-2 control-label" %>
+    <%= f.label :version, class: "col-sm-2 col-form-label text-right" %>
     <div class="col-sm-4">
       <%= f.text_field :version, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group row">
-    <%= f.label :edition, class: "col-sm-2 control-label" %>
+    <%= f.label :edition, class: "col-sm-2 col-form-label text-right" %>
     <div class="col-sm-4">
       <%= f.text_field :edition, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group row">
-    <%= f.label :channel, class: "col-sm-2 control-label" %>
+    <%= f.label :channel, class: "col-sm-2 col-form-label text-right" %>
     <div class="col-sm-4">
       <%= f.text_field :channel, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group row">
-    <%= f.label :purchased_from, class: "col-sm-2 control-label" %>
+    <%= f.label :purchased_from, class: "col-sm-2 col-form-label text-right" %>
     <div class="col-sm-4">
       <%= f.text_field :purchased_from, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group row">
-    <%= f.label :purchased_on, class: "col-sm-2 control-label" %>
+    <%= f.label :purchased_on, class: "col-sm-2 col-form-label text-right" %>
     <div class="col-sm-4">
       <%= f.date_field :purchased_on, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group row">
-    <%= f.label :in_use, class: "col-sm-2 control-label" %>
+    <%= f.label :in_use, class: "col-sm-2 col-form-label text-right" %>
     <div class="col-sm-4">
       <%= f.select :in_use, [["Yes", true],["No", false]], {prompt: true}, {class: "form-control"} %>
     </div>
@@ -74,14 +74,14 @@
     <legend>Assign to</legend>
 
     <div class="form-group row">
-      <%= f.label :device_id, class: "col-sm-2 control-label" %>
+      <%= f.label :device_id, class: "col-sm-2 col-form-label text-right" %>
       <div class="col-sm-4">
         <%= f.collection_select :device_id, Device.order(:tag), :id, :name, {prompt: true, include_blank: "None"}, {class: "form-control"} %>
       </div>
     </div>
 
     <div class="form-group row">
-      <%= f.label :person_id, class: "col-sm-2 control-label" %>
+      <%= f.label :person_id, class: "col-sm-2 col-form-label text-right" %>
       <div class="col-sm-4">
         <%= f.collection_select :person_id, Person.order(:last_name), :id, :full_name, {prompt: true, include_blank: "None"}, {class: "form-control"} %>
       </div>
@@ -91,7 +91,7 @@
   <fieldset>
   <legend></legend>
   <div class="form-group row">
-    <%= f.label :notes, class: "col-sm-2 control-label" %>
+    <%= f.label :notes, class: "col-sm-2 col-form-label text-right" %>
     <div class="col-sm-4">
       <%= f.text_area :notes, class: "form-control" %>
     </div>
