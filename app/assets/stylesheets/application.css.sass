@@ -50,14 +50,28 @@ html
   @extend .bg-light
 
 // styles for dl's on the show views
-dl.show
+dl.show-device
   @extend .row
   dt
-    @extend .col-2
-    @extend .text-right
+    @extend .col-4
   dd
-    @extend .col-10
-    @extend .text-left
+    @extend .col-8
+
+// styles for dl's on the show views
+dl.show-licence
+  @extend .row
+  dt
+    @extend .col-4
+  dd
+    @extend .col-8
+
+// styles for dl's on the show views
+dl.show-person
+  @extend .row
+  dt
+    @extend .col-3
+  dd
+    @extend .col-9
 
 // form error formatting
 .field_with_errors
