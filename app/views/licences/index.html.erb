@@ -1,18 +1,15 @@
 <h1>Software</h1>
-<table class="table table-striped">
+<table class="table table-striped table-sm table-borderless mt-4">
   <thead>
     <tr>
-      <th rowspan="2">Vendor</th>
-      <th rowspan="2">Application</th>
-      <th rowspan="2">Version</th>
-      <th rowspan="2">Edition</th>
-      <th rowspan="2">Channel</th>
-      <th colspan="2">Assigned to</th>
-      <th rowspan="2" colspan="3" class="fit"></th>
-    </tr>
-    <tr>
+      <th>Vendor</th>
+      <th>Application</th>
+      <th>Version</th>
+      <th>Edition</th>
+      <th>Channel</th>
       <th>Device</th>
       <th>Person</th>
+      <th colspan="3" class="fit"></th>
     </tr>
   </thead>
 
@@ -26,12 +23,12 @@
         <td><%= licence.channel %></td>
         <td><%= licence.device.try(:name) %></td>
         <td><%= licence.person.try(:full_name) %></td>
-        <td class="fit"><%= link_to 'Show', licence, class: "btn btn-success" %></td>
+        <td><%= link_to 'Show', licence, class: "btn btn-success" %></td>
         <% if user_signed_in? %>
-          <td class="fit"><%= link_to 'Edit', edit_licence_path(licence), class: "btn btn-primary" %></td>
-          <td class="fit"><%= link_to 'Delete', licence, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+          <td><%= link_to 'Edit', edit_licence_path(licence), class: "btn btn-primary" %></td>
+          <td><%= link_to 'Delete', licence, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
         <% else %>
-          <td colspan="2>" class="fit"></td>
+          <td colspan="2"></td>
         <% end %>
       </tr>
     <% end %>

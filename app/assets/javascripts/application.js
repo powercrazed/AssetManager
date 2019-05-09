@@ -10,10 +10,12 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+//= require jquery3
+//= require popper
+//= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
-//= require bootstrap-sprockets
+//= require bs-custom-file-input/dist/bs-custom-file-input.min.js
 //= require_tree .
 
 // close alert after 2s = 2000ms
@@ -22,3 +24,8 @@ window.setTimeout(function() {
         $(this).remove();
     });
 }, 2000);
+
+// dynamic Bootstrap 4 custom file input
+$(document).ready(function () {
+    bsCustomFileInput.init()
+  });

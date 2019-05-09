@@ -1,11 +1,11 @@
 <h1>People</h1>
 
-<table class="table table-striped">
+<table class="table table-striped table-sm table-borderless mt-4">
   <thead>
     <tr>
       <th>Name</th>
       <th>Location</th>
-      <th colspan="3"></th>
+      <th colspan="3" class="fit"></th>
     </tr>
   </thead>
 
@@ -14,12 +14,12 @@
       <tr>
         <td><%= person.full_name %></td>
         <td><%= person.location %></td>
-        <td class="fit"><%= link_to 'Show', person, class: "btn btn-success" %></td>
+        <td><%= link_to 'Show', person, class: "btn btn-success" %></td>
         <% if user_signed_in? %>
-          <td class="fit"><%= link_to 'Edit', edit_person_path(person), class: "btn btn-primary" %></td>
-          <td class="fit"><%= link_to 'Delete', person, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+          <td><%= link_to 'Edit', edit_person_path(person), class: "btn btn-primary" %></td>
+          <td><%= link_to 'Delete', person, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
         <% else %>
-          <td colspan="2>" class="fit"></td>
+          <td colspan="2"></td>
         <% end %>
       </tr>
     <% end %>

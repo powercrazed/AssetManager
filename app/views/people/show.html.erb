@@ -8,7 +8,7 @@
 <% end %>
 
 <hr />
-<dl class="dl-horizontal">
+<dl class="show">
   <dt>First Name:</dt>
   <dd><%= @person.first_name %></dd>
   <dt>Last Name:</dt>
@@ -26,7 +26,7 @@
 <%= link_to 'Back', people_path, class: "btn btn-primary" %>
 
 <h2>Person Licences</h2>
-<table class="table table-striped">
+<table class="table table-striped table-sm">
   <thead>
     <tr>
       <th>Vendor</th>
@@ -47,7 +47,7 @@
 </table>
 
 <h2>Device Licences</h2>
-<table class="table table-striped">
+<table class="table table-striped table-sm">
   <thead>
     <tr>
       <th>Vendor</th>
