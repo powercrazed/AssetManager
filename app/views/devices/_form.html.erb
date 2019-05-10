@@ -1,100 +1,19 @@
-<% if @device.errors.any? %>
-  <div id="error_explanation" class="alert alert-danger alert-dismissible">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <strong><%= pluralize(@device.errors.count, "error") %> prohibited this device from being saved:</strong>
-
-    <ul>
-    <% @device.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-    </ul>
+<%= bootstrap_form_for(@device, layout: :horizontal, label_col: "col-sm-12 col-md-3 col-lg-2", control_col: "col-sm-12 col-md-6 col-lg-4") do |f| %>
+  <%= f.text_field :tag %>
+  <%= f.text_field :name %>
+  <%= f.text_field :dev_type %>
+  <%= f.text_field :make %>
+  <%= f.text_field :model %>
+  <%= f.text_field :serial %>
+  <%= f.date_select :purchased_on %>
+  <%= f.text_field :warranty_length %>
+  <%= f.text_field :warranty_type %>
+  <%= f.collection_select :person_id, Person.order(:last_name), :id, :full_name, {prompt: true, include_blank: "None"} %>
+  <%= f.text_area :notes %>
+  <div class="row">
+  <div class="col-md-4 offset-md-3 offset-lg-2">
+  <%= f.submit "Submit", class: "btn btn-success" %>
+  <%= link_to "Back", :back, class: "btn btn-primary" %>
   </div>
-<% end %>
-
-<!-- horizontal form -->
-<%= form_for @device do |f| %>
-
-  <div class="form-group row">
-    <%= f.label :tag, class: "col-sm-2 col-form-label text-right" %>
-    <div class="col-sm-4">
-      <%= f.text_field :tag, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group row">
-    <%= f.label :name, class: "col-sm-2 col-form-label text-right" %>
-    <div class="col-sm-4">
-      <%= f.text_field :name, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group row">
-    <%= f.label :dev_type, class: "col-sm-2 col-form-label text-right" %>
-    <div class="col-sm-4">
-      <%= f.text_field :dev_type, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group row">
-    <%= f.label :make, class: "col-sm-2 col-form-label text-right" %>
-    <div class="col-sm-4">
-      <%= f.text_field :make, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group row">
-    <%= f.label :model, class: "col-sm-2 col-form-label text-right" %>
-    <div class="col-sm-4">
-      <%= f.text_field :model, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group row">
-    <%= f.label :serial, class: "col-sm-2 col-form-label text-right" %>
-    <div class="col-sm-4">
-      <%= f.text_field :serial, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group row">
-    <%= f.label :purchased_on, class: "col-sm-2 col-form-label text-right" %>
-    <div class="col-sm-4">
-      <%= f.date_field :purchased_on, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group row">
-    <%= f.label :warranty_length, class: "col-sm-2 col-form-label text-right" %>
-    <div class="col-sm-4">
-      <%= f.text_field :warranty_length, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group row">
-    <%= f.label :warranty_type, class: "col-sm-2 col-form-label text-right" %>
-    <div class="col-sm-4">
-      <%= f.text_field :warranty_type, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group row">
-    <%= f.label :assigned_to, class: "col-sm-2 col-form-label text-right" %>
-    <div class="col-sm-4">
-      <%= f.collection_select :person_id, Person.order(:last_name), :id, :full_name, {prompt: true, include_blank: "None"}, {class: "form-control"} %>
-    </div>
-  </div>
-
-  <div class="form-group row">
-    <%= f.label :notes, class: "col-sm-2 col-form-label text-right" %>
-    <div class="col-sm-4">
-      <%= f.text_area :notes, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="actions form-group row">
-    <div class="col-sm-10 offset-sm-2">
-      <%= f.submit "Submit", class: "btn btn-success" %>
-      <%= link_to "Back", :back, class: "btn btn-primary" %>
-    </div>
   </div>
 <% end %>

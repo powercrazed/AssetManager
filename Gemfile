@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 # add devise for user authentication
 gem 'devise'
 
+# bootstrap form styling
+gem "bootstrap_form", ">= 4.2.0"
+
 # add bootstrap support
 gem 'bootstrap', '~> 4.3.1'
 gem 'autoprefixer-rails'
