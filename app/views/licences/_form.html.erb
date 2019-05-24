@@ -1,4 +1,4 @@
-<%= bootstrap_form_for(@licence, layout: :horizontal, label_col: "col-sm-12 col-md-3 col-lg-2", control_col: "col-sm-12 col-md-6 col-lg-4") do |f| %>
+<%= bootstrap_form_for(@licence, layout: :horizontal, label_col: "col-lg-3 text-lg-right", control_col: "col") do |f| %>
   <%= f.text_field :vendor %>
   <%= f.text_field :app_name %>
   <%= f.text_field :version %>
@@ -14,7 +14,7 @@
     <%= f.collection_select :person_id, Person.order(:last_name), :id, :full_name, {prompt: true, include_blank: "None"} %>
   </fieldset>
   <div class="row">
-  <div class="col-md-4 offset-md-3 offset-lg-2">
+  <div class="col offset-lg-3">
   <%= f.submit "Submit", class: "btn btn-success" %>
   <%= link_to "Back", :back, class: "btn btn-primary" %>
   </div>
