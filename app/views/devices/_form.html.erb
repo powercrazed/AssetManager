@@ -1,100 +1,19 @@
-<% if @device.errors.any? %>
-  <div id="error_explanation" class="alert alert-danger alert-dismissible">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <strong><%= pluralize(@device.errors.count, "error") %> prohibited this device from being saved:</strong>
-
-    <ul>
-    <% @device.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-    </ul>
+<%= bootstrap_form_for(@device, layout: :horizontal, label_col: "col-lg-3 text-lg-right", control_col: "col") do |f| %>
+  <%= f.text_field :tag %>
+  <%= f.text_field :name %>
+  <%= f.text_field :dev_type %>
+  <%= f.text_field :make %>
+  <%= f.text_field :model %>
+  <%= f.text_field :serial %>
+  <%= f.date_select :purchased_on %>
+  <%= f.text_field :warranty_length %>
+  <%= f.text_field :warranty_type %>
+  <%= f.collection_select :person_id, Person.order(:last_name), :id, :full_name, {prompt: true, include_blank: "None"} %>
+  <%= f.text_area :notes %>
+  <div class="row">
+  <div class="col offset-lg-3">
+  <%= f.submit "Submit", class: "btn btn-success" %>
+  <%= link_to "Back", :back, class: "btn btn-primary" %>
   </div>
-<% end %>
-
-<!-- horizontal form -->
-<%= form_for @device, :html => {:class => "form-horizontal"} do |f| %>
-
-  <div class="form-group">
-    <%= f.label :tag, class: "col-xs-12 col-sm-2 control-label" %>
-    <div class="col-xs-10 col-sm-4">
-      <%= f.text_field :tag, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :name, class: "col-xs-12 col-sm-2 control-label" %>
-    <div class="col-xs-10 col-sm-4">
-      <%= f.text_field :name, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :dev_type, class: "col-xs-12 col-sm-2 control-label" %>
-    <div class="col-xs-10 col-sm-4">
-      <%= f.text_field :dev_type, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :make, class: "col-xs-12 col-sm-2 control-label" %>
-    <div class="col-xs-10 col-sm-4">
-      <%= f.text_field :make, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :model, class: "col-xs-12 col-sm-2 control-label" %>
-    <div class="col-xs-10 col-sm-4">
-      <%= f.text_field :model, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :serial, class: "col-xs-12 col-sm-2 control-label" %>
-    <div class="col-xs-10 col-sm-4">
-      <%= f.text_field :serial, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :purchased_on, class: "col-xs-12 col-sm-2 control-label" %>
-    <div class="col-xs-10 col-sm-4">
-      <%= f.date_field :purchased_on, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :warranty_length, class: "col-xs-12 col-sm-2 control-label" %>
-    <div class="col-xs-10 col-sm-4">
-      <%= f.text_field :warranty_length, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :warranty_type, class: "col-xs-12 col-sm-2 control-label" %>
-    <div class="col-xs-10 col-sm-4">
-      <%= f.text_field :warranty_type, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :person, class: "col-xs-12 col-sm-2 control-label" %>
-    <div class="col-xs-10 col-sm-4">
-      <%= f.collection_select :person_id, Person.order(:last_name), :id, :full_name, {prompt: true, include_blank: "None"}, {class: "form-control"} %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :notes, class: "col-xs-12 col-sm-2 control-label" %>
-    <div class="col-xs-10 col-sm-4">
-      <%= f.text_area :notes, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="actions form-group">
-    <div class="col-xs-12 col-sm-10 col-sm-offset-2">
-      <%= f.submit "Submit", class: "btn btn-success" %>
-      <%= link_to "Back", :back, class: "btn btn-primary" %>
-    </div>
   </div>
 <% end %>

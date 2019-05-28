@@ -13,7 +13,6 @@
  *= require_tree .
  *= require_self
  */
-@import "bootstrap-sprockets"
 @import "bootstrap"
 
 body
@@ -33,10 +32,12 @@ select.form-control
   width: auto
   display: inline
 
+//
 html
   position: relative
   min-height: 100%
 
+//
 .footer
   position: absolute
   bottom: 0
@@ -45,11 +46,39 @@ html
   height: 50px
   // line-height = height for single line vertically centered
   line-height: 50px
-  background-color: $navbar-default-bg
+  @extend .small
+  @extend .bg-light
+
+// styles for dl's on the show views
+dl.show-device
+  @extend .row
+  dt
+    @extend .col-4
+    @extend .text-right
+  dd
+    @extend .col-8
+
+// styles for dl's on the show views
+dl.show-licence
+  @extend .row
+  dt
+    @extend .col-4
+    @extend .text-right
+  dd
+    @extend .col-8
+
+// styles for dl's on the show views
+dl.show-person
+  @extend .row
+  dt
+    @extend .col-3
+    @extend .text-right
+  dd
+    @extend .col-9
 
 // form error formatting
 .field_with_errors
-  @extend .has-error
+  @extend .is-invalid
 
 // devise alert styling
 .alert-alert

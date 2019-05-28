@@ -1,38 +1,49 @@
-<h1>Showing Licence - <%= h @licence.id %></h1>
-
 <% if notice %>
-  <div id="notice" class="alert alert-success alert-dismissible">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <%= notice %>
+<div id="notice" class="alert alert-success alert-dismissible">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+      aria-hidden="true">&times;</span></button>
+  <%= notice %>
+</div>
+<% end %>
+<div class="col-lg-6">
+  <div class="card bg-light mt-4">
+    <div class="card-header container-fluid">
+      <div class="row">
+        <div class="col">
+          <h3>Licence Details</h3>
+        </div>
+        <div class="col">
+          <% if user_signed_in? %>
+          <%= link_to 'Edit', edit_licence_path(@licence), class: "btn btn-primary float-right" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <dl class="show-licence">
+        <dt>Vendor:</dt>
+        <dd><%= @licence.vendor %></dd>
+        <dt>Application:</dt>
+        <dd><%= @licence.app_name %></dd>
+        <dt>Version:</dt>
+        <dd><%= @licence.version %></dd>
+        <dt>Edition:</dt>
+        <dd><%= @licence.edition %></dd>
+        <dt>Channel:</dt>
+        <dd><%= @licence.channel %></dd>
+        <dt>Purchased From:</dt>
+        <dd><%= @licence.purchased_from %></dd>
+        <dt>Purchased on</dt>
+        <dd><%= @licence.purchased_on %></dd>
+        <dt>In Use:</dt>
+        <dd><%= @licence.in_use %></dd>
+        <legend>Assigned to</legend>
+        <dt>Device:</dt>
+        <dd><%= @licence.device.try(:name) %></dd>
+        <dt>Person:</dt>
+        <dd><%= @licence.person.try(:full_name) %></dd>
+      </dl>
+    </div>
   </div>
-<% end %>
-
-<hr />
-<dl class="dl-horizontal">
-  <dt>Vendor:</dt>
-  <dd><%= @licence.vendor %></dd>
-  <dt>Application:</dt>
-  <dd><%= @licence.app_name %></dd>
-  <dt>Version:</dt>
-  <dd><%= @licence.version %></dd>
-  <dt>Edition:</dt>
-  <dd><%= @licence.edition %></dd>
-  <dt>Channel:</dt>
-  <dd><%= @licence.channel %></dd>
-  <dt>Purchased From:</dt>
-  <dd><%= @licence.purchased_from %></dd>
-  <dt>Purchased on</dt>
-  <dd><%= @licence.purchased_on %></dd>
-  <dt>In Use:</dt>
-  <dd><%= @licence.in_use %></dd>
-  <dt>Device:</dt>
-  <dd><%= @licence.device.try(:name) %></dd>
-  <dt>Person:</dt>
-  <dd><%= @licence.person.try(:full_name) %></dd>
-</dl>
-<hr />
-
-<% if user_signed_in? %>
-  <%= link_to 'Edit', edit_licence_path(@licence), class: "btn btn-primary" %>
-<% end %>
-<%= link_to 'Back', licences_path, class: "btn btn-primary" %>
+  <%= link_to 'Back', licences_path, class: "btn btn-primary mt-3" %>
+</div>
